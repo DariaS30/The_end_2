@@ -1,0 +1,1043 @@
+@use './colors';
+@use './mixins';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    border: none;
+}
+
+.back-gd{
+    background: colors.$gradient-supersoft;
+    border-radius: 0px 0px 12px 12px;
+}
+.h-block{
+    background-image: url('../IMG/Symbol.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.first-row{
+    background: colors.$main-rgb;
+    padding: 10px 15px;
+
+    &__phone-number{
+        @include mixins.Montserrat(16px, 700, normal);
+        color: colors.$white;
+    }
+    &__address{
+        @include mixins.Montserrat(16px, 400, normal);
+        color: colors.$white;
+        text-align: right;
+    }
+}
+.languages{
+    @include mixins.flex(unset, center, 0px, row);
+    
+}
+.link{
+    @include mixins.Montserrat(12px, 700, normal);
+    letter-spacing: 1px;
+    color: colors.$white;
+}
+
+.item{
+    text-align: center;
+    border: 1px colors.$main-rgb;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    padding: 5px 7px;
+    &:hover{
+        background: colors.$accent;
+    }
+}
+
+.second-row{
+    @include mixins.flex(space-between, center, 0px, row);
+    padding: 0px 15px;
+}
+.menu{
+    position: relative;
+    cursor: pointer;
+    &:hover{
+        .dropdown{
+            display: block;
+        }
+    }
+}
+.dropdown{
+    position: absolute;
+    display: none;
+    top: 32px;
+    left: -72px;
+    &__part{
+        @include mixins.Montserrat(16px, 700, normal);
+        text-align: center;
+        color: colors.$white;
+        padding: 8px;
+        transition: background-color 0.3s ease;
+        &:hover{
+            color: colors.$accent;
+            text-decoration: underline;
+        }
+    }
+    &:hover{
+        display: block;
+    }
+}
+.dropdown-resize{
+    @include mixins.flex(flex-end, center, 15px, row);
+    &__part{
+        @include mixins.Montserrat(16px, 700, normal);
+        text-align: center;
+        color: colors.$white;
+        transition: background-color 0.3s ease;
+        &:hover{
+            color: colors.$accent;
+            text-decoration: underline;
+        }
+    }
+}
+
+.solutions{
+    @include mixins.flex(center, center, 150px, column);
+    &__text{
+        @include mixins.Montserrat(38px, 700, normal);
+        padding-top: 129px;
+        color: colors.$white;
+        width: 5em;
+        text-align: center;
+    }
+    &__scroll{
+        circle, path{
+            stroke: colors.$white;
+        }
+        rect{
+            fill: colors.$white;
+        }
+        cursor: pointer;
+        margin-bottom: 30px;
+        &:hover{
+            circle, path{
+                stroke: colors.$accent;
+            }
+            rect{
+                fill: colors.$accent;
+            }
+        }
+    }
+}
+.idea{
+    @include mixins.flex(center, center, 30px, column);
+    padding: 0 30px;
+    overflow: hidden;
+}
+.benefit{
+    @include mixins.flex(flex-start, center, 30px, row);
+    width: 20em;
+}
+.part{
+    &__link{
+        @include mixins.Montserrat(38px, 700, normal);
+        color: colors.$text;
+        display: flex;
+        width: 10em;
+        &:hover{
+            color: colors.$accent;
+        }
+        &--bg{
+            @include mixins.Montserrat(38px, 700, normal);
+            background: colors.$gradient-red-reversed;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+}
+.txt{
+    @include mixins.flex(flex-start, flex-start, 30px, column);
+    border-top: 4px solid colors.$border-rgb30;
+    &__title{
+        @include mixins.Montserrat(30px, 700, normal);
+        color: colors.$white;
+        padding-top: 30px; 
+    }
+    &__info{
+        @include mixins.Montserrat(19px, 400, 30px);
+        color: colors.$white;
+    }
+}
+.services{
+    @include mixins.flex(center, flex-start, 30px, column);
+    position: relative;
+    &__border{
+        position: absolute;
+        width: 90%;
+        border: 5px solid colors.$light-grey;
+        border-radius: 0px 0px 12px 12px;
+        margin-bottom: -145.4em;
+        left: 15px;
+    }
+    &__border-white{
+        position: absolute;
+        width: 80%;
+        border: 5px solid colors.$whiteF2;
+        border-radius: 0px 0px 12px 12px;
+        margin-bottom: -146.8em;
+        left: 2.2em;
+    }
+}
+.title-part{
+    @include mixins.flex(center, flex-start, 0px, column);
+    margin: 30px;
+    &__origin{
+        @include mixins.Montserrat(30px, 700, normal);
+        background: colors.$gradient-red-text;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+.main{
+    @include mixins.flex(center, flex-start, 30px, column);
+    margin: 0 30px;
+    padding-bottom: 60px;
+}
+
+.turn{
+    @include mixins.flex(center, center, 0px, row);
+    cursor: pointer;
+    &__word{
+        @include mixins.Montserrat(14px, 700, normal);
+        color: colors.$regular;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        &:hover{
+            color: colors.$accent;
+        }
+    }
+    &__svg{
+        stroke: colors.$regular;
+        &:hover{
+            stroke: colors.$accent;
+        }
+    }
+}
+.merit{
+    @include mixins.flex(center, flex-start, 15px, column);
+    &__title{
+        @include mixins.Montserrat(22px, 700, normal);
+        color: colors.$regular;
+        padding-top: 15px;
+    }
+    &__about{
+        @include mixins.Montserrat(16px, 400, 26px);
+        color: colors.$white;
+    }
+}
+.creator{
+    @include mixins.flex(center, flex-start, 0px, column);
+    margin: 30px;
+    &__img{
+        margin-top: 20px;
+    }
+}
+.info{
+    @include mixins.flex(center, flex-start, 0px, column);
+    margin: 30px;
+    &__quote{
+        @include mixins.Montserrat(30px, 700, normal);
+        background: colors.$gradient-red-text;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .info{
+        &__quote-resize{
+            @include mixins.Montserrat(38px, 700, normal);
+            background: colors.$gradient-red-text;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    &__name{
+        @include mixins.Montserrat(16px, 700, normal);
+        color: colors.$text;
+        width: 15em;
+        padding-top: 30px;
+        padding-bottom: 6px;
+    }
+    &__partner{
+        @include mixins.Montserrat(14px, 400, 24px);
+        color: colors.$text;
+    }
+}
+.team{
+    @include mixins.flex(flex-start, center, 0px, row);
+    &__word{
+        @include mixins.Montserrat(14px, 700, normal);
+        text-transform: uppercase;
+        color: colors.$regular;
+        letter-spacing: 1px;
+    }
+}
+.block-svg{
+    @include mixins.flex(center, center, 15px, row);
+    width: 375px;
+    margin-top: 30px;
+}
+.funders{
+    @include mixins.flex(center, center, 30px, column);
+    &__trust{
+        @include mixins.Montserrat(14px, 700, normal);
+        text-transform: uppercase;
+        color: colors.$main;
+        letter-spacing: 1px;
+        padding-top: 30px;
+    }
+}
+.member{
+    @include mixins.flex(center, center, 0px, column);
+}
+.publication{
+    margin: 30px;
+}
+.caption{
+    @include mixins.flex(unset, unset, 5px, column);
+    &__subtitle{
+        @include mixins.Montserrat(30px, 700, normal);
+        background: colors.$gradient-red-text;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+.block{
+    &__img{
+        padding-top: 30px;
+    }
+}
+.report{
+    margin: 30px;
+    @include mixins.flex(flex-start, flex-start, 15px, column);
+    &__title{
+        @include mixins.Montserrat(16px, 700, normal);
+        color: colors.$regular;
+    }
+    &__date{
+        @include mixins.Montserrat(12px, 700, normal);
+        color: colors.$text;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+    }
+    &__info{
+        @include mixins.Montserrat(14px, 400, 22px);
+        color: colors.$black;
+        padding-top: 15px;
+    }
+}
+.scroll{
+    @include mixins.flex(flex-start, center, 0px, row);
+    &__item{
+        @include mixins.Montserrat(14px, 700, normal);
+        text-transform: uppercase;
+        color: colors.$regular;
+        letter-spacing: 1px;
+    }
+}
+footer{
+    @include mixins.flex(center, center, 20px, column);
+    padding: 30px;
+}
+
+.address{
+    @include mixins.flex(center, center, 14px, column);
+
+    &__info{
+        @include mixins.Montserrat(16px, 400, normal);
+        color: colors.$main;
+    }
+    &__link{
+        @include mixins.Montserrat(12px, 700, normal);
+        color: colors.$regular;
+        text-transform: uppercase;
+        padding-bottom: 21px;
+    }
+}
+
+.contacts{
+    @include mixins.flex(center, center, 10px, column);
+
+    &__phone-number{
+        @include mixins.Montserrat(16px, 700, normal);
+        color: colors.$main-alt;
+    }
+    &__email{
+        @include mixins.Montserrat(16px, 700, normal);
+        color: colors.$regular;
+    }
+
+    &__foot{
+        @include mixins.Montserrat(16px, 400, normal);
+        color: colors.$text;
+        padding-top: 20px;
+    }
+}
+.creator, .funders, .publication, footer{
+    background: colors.$bg;
+}
+
+@media screen and (min-width: 0px) and (max-width: 767px){
+    .first-row{
+        &__svg, &__address{
+            display: none;
+        }
+    }
+    .column{
+        @include mixins.flex(space-between, center, 0, row);
+    }
+    .second-row{
+        &__logo-resize{
+            display: none;
+        }
+    }
+    .creator{
+        &__img-resize, &__img-resize400, &__img-resize344{
+            display: none;
+        }
+    }
+    .info{
+        &__quote-resize{
+            display: none;
+        }
+    }
+    .member{
+        &__item-resize{
+            display: none;
+        }
+    }
+    .menu-resize, .menu-resize2{
+        display: none;
+    }
+    .block{
+        &__img-resize{
+            display: none;
+        }
+    }
+    .address{
+        &__point{
+            display: none;
+        }
+    }
+    .contacts{
+        &__point{
+            display: none;
+        }
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    header{
+        @include mixins.flex(space-between, flex-start, 30px, column);
+        margin: 0px 60px;
+    }
+    .first-row{
+        @include mixins.flex(flex-start, center, 6px, column);
+        background: none;
+        padding: 0;
+    }
+    .column{
+        @include mixins.flex(space-between, center, 6px, row);
+        padding-top: 50px;
+    }
+    .second-row{
+        padding: 0;
+        &__logo{
+            display: none;
+        }
+    }
+    .menu,  .menu-resize{
+        display: none;
+    }
+    .dropdown-resize2{
+        @include mixins.flex(flex-start, flex-start, 15px, row);
+        position: absolute;
+        top: 12.8em;
+        left: 3.6em;
+    }
+    .solutions{
+        &__text{
+            width: 15em;
+            padding: 267px 0;
+        }
+    }
+    .idea{
+        @include mixins.flex(flex-start, flex-start, 60px, column);
+        padding: 60px;
+    }
+    .benefit{
+        width: 41em;
+    }
+    .txt{
+        &__title{
+            padding-top: 60px;
+        }
+    }
+    .services{
+        margin: 0 60px;
+        &__border{
+            width: 113%;
+            margin-bottom: -89.2em;
+            left: -45px;
+        }
+        &__border-white{
+            margin-bottom: -90.3em;
+            width: 109%;
+            left: -1.7em;
+        }
+    }
+    .title-part{
+        margin: 0 0 30px 0;
+        &__origin{
+            @include mixins.Montserrat(38px, 700, normal);
+        }
+    }
+    .main{
+        @include mixins.flex(center, flex-start, 60px, unset);
+        flex-wrap: wrap;
+        margin: 0;
+    }
+    .merit{
+        width: 294px;
+        &__about{
+            width: 100%;
+        }
+    }
+    .creator{
+        margin: 60px;
+        &__img, &__img-resize400, &__img-resize344{
+            display: none;
+        }
+    }
+    .info{
+        &__quote{
+            display: none;
+        }
+        &__quote-resize{
+            width: 18em;
+        }
+        &__name{
+            width: 20em;
+        }
+    }
+    .block-svg{
+        width: 40em;
+    }
+    .funders{
+        &__trust{
+            padding-top: 0px;
+        }
+    }
+    .member{
+        @include mixins.flex(center, center, 0px, unset);
+        flex-wrap: wrap;
+        &__item{
+            display: none;
+        }
+    }
+    .publication{
+        margin: 30px 60px;
+    }
+    .caption{
+        @include mixins.flex(unset, unset, 10px, column);
+        &__subtitle{
+            @include mixins.Montserrat(38px, 700, normal);
+        }
+    }
+    .stories{
+        @include mixins.flex(unset, unset, 30px, unset);
+        flex-wrap: wrap;
+    }
+    .block{
+        width: 309px;
+    }
+    .block-resize{
+        width: 648px;
+        &__img{
+            display: none;
+        }
+    }
+    footer{
+        @include mixins.flex(space-between, flex-start, 0, row);
+        margin: 30px 60px;
+        margin-top: 60px;
+        padding: 0;
+    }
+    .part{
+        @include mixins.flex(flex-start, flex-start, 20px, column);
+    }
+    .address, .contacts{
+        @include mixins.flex(center, center, 10px, row);
+        &__link{
+            padding: 0;
+        }
+    }   
+    .contacts{
+        &__foot{
+            position: absolute;
+            right: 4em;
+            width: 300px;
+            padding-top: 0;
+            text-align: right;
+        }
+        &__phone-number{
+            width: 104px;
+        }
+    }
+}
+
+@media screen and (min-width: 1023px) and (max-width: 1950px){
+    .h-block {
+        background-image: url('../IMG/Symbol2.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    header{
+        @include mixins.flex(space-between, center, 0px, row-reverse);
+        margin: 0 60px;
+        padding-top: 50px;
+    }
+    .first-row{
+        @include mixins.flex(flex-end, flex-end, 16px, column);
+        background: none;
+        padding: 0;
+    }
+    .column{
+        @include mixins.flex(flex-end, center, 6px, row);
+    }
+    .second-row{
+        &__logo{
+            display: none;
+        }
+        padding: 0;
+        @include mixins.flex(space-between, flex-start, 0px, row);
+    }
+    .menu, .menu-resize{
+        display: none;
+    }
+    .dropdown-resize2{
+        @include mixins.flex(flex-end, center, 15px, row);
+    }
+    .solutions{
+        &__text{
+            padding: 245px 0 139px 0;
+            width: 20em;
+        }
+    }
+    .idea{
+        @include mixins.flex(unset, center, 60px, row);
+        align-self: stretch;
+        margin: 60px;
+    }
+    .benefit{
+        @include mixins.flex(unset, flex-end, 30px, column);
+        border-right: 4px solid colors.$border-rgb30;
+        padding-right: 60px;
+        text-align: right;
+        width: 375px;
+    }
+    .txt{
+        @include mixins.flex(unset, flex-start, 30px, column);
+        border-top: none; 
+        width: 405px;
+        
+        &__title{
+            padding-top: 0;
+        }
+    }
+    .part{
+        &__link{
+            width: max-content;
+            text-align: right;
+        }
+    }
+    .services{
+        margin: 0 60px;
+        &__border{
+            margin-bottom: -65.8em;
+            width: 110%;
+            left: -3em;
+        }
+        &__border-white{
+            margin-bottom: -67em;
+            width: 108%;
+            left: -2.4em;
+        }
+    }
+    .title-part{
+        margin: 0;
+        &__origin{
+            @include mixins.Montserrat(38px, 700, normal);
+        }
+    }
+    .main{
+        @include mixins.flex(unset, flex-start, 60px, unset);
+        flex-wrap: wrap;
+        margin: 0;
+        padding-top: 30px;
+    }
+    .merit{
+        width: 261px;
+    }
+    .information{
+        @include mixins.flex(unset, flex-start, 0px, row);
+    }
+    .creator{
+        margin: 60px;
+        &__img-resize, &__img, &__img-resize344{
+            display: none;
+        }
+    }
+    .info{
+        width: 444px;
+        &__quote{
+            display: none;
+        }
+        &__name{
+            width: 100%;
+        }
+    }
+    .block-svg{
+        width: 100%;
+    }
+    .member{
+        @include mixins.flex(unset, unset, 0px, row);
+        flex-wrap: wrap;
+        &__item{
+            display: none;
+        }
+    }
+    .publication{
+        margin: 0 60px;
+        margin-top: 30px;
+    }
+    .caption{
+        @include mixins.flex(unset, unset, 10px, column);
+        &__subtitle{
+            @include mixins.Montserrat(38px, 700, normal);
+        }
+    }
+    .stories{
+        padding-top: 30px;
+        @include mixins.flex(unset, unset, 30px, row);
+        flex-wrap: wrap;
+    }
+    .block{
+        width: 281px;
+        &__img-resize{
+            display: none;
+        }
+        &__img{
+            width: 281px;
+            padding-top: 0;
+        }
+    }
+    .block-resize{
+        &__img{
+            width: 281px;
+        }
+    }
+    footer{
+        @include mixins.flex(space-between, flex-start, 0px, row);
+        margin: 30px 60px;
+        padding: 0;
+    }
+    .address, .contacts{
+        @include mixins.flex(flex-start, center, 6px, row);
+    }
+    .contacts{
+        &__foot{
+            padding-top: 0;
+        }
+    }
+    .address{
+        &__link{
+            padding-bottom: 0;
+        }
+    }
+    .part{
+        @include mixins.flex(flex-start, flex-start, 21px, column);
+    }
+}
+@media screen and (min-width: 1215px) and (max-width: 1439px){
+    .txt{
+        width: 527px;
+    }
+    .merit{
+        width: 320px;
+    }
+    .services{
+       &__border{
+            margin-bottom: -60.8em;
+            width: 108%;
+            left: -3em; 
+        }
+        &__border-white{
+            margin-bottom: -62em;
+            width: 106.5%;
+            left: -2.4em;
+        }
+    }
+    .info{
+        @include mixins.flex(center, flex-start, 30px, column);
+        width: 43em;
+    }
+    .publication{
+        margin: 0 90px;
+        margin-top: 60px;
+    }
+    .stories{
+        @include mixins.flex(unset, unset, 90px, row);
+    }
+}
+@media screen and (min-width: 1400px){
+    .solutions{
+        &__text{
+            padding: 261px 0 155px 0;
+        }
+    }
+    .idea{
+        margin: 60px 180px;
+        padding: 0;
+    }
+    .txt{
+        width: 550px;
+    }
+    .merit {
+        width: 400px;
+    }
+    .services{
+        &__border{
+            margin-bottom: -56em;
+            width: 106%;
+        }
+        &__border-white{
+            margin-bottom: -57.2em;
+            width: 104.5%;
+        }
+    }
+    .creator{
+        &__img-resize344{
+            display: block;
+            width: 400px;
+            height: 344px;
+        }
+        &__img-resize400{
+            display: none;
+        }
+    }
+    .info{
+        width: 870px;
+    }
+    .member{
+        &__item-resize{
+            display: none;
+        }
+        &__item{
+            display: flex;
+            width: 360px;
+            height: 120px;
+        }
+    }
+    .publication{
+        margin-top: 90px;
+    }
+    .stories{
+        @include mixins.flex(unset, unset, 30px, row);
+        width: 100%;
+    }
+    .block{
+        width: 420px;
+        &__img{
+            width: 420px;
+            height: 200px;
+        }
+    }
+    .block-resize{
+        width: 420px;
+        &__img{
+            width: 420px;
+            height: 200px;
+        }
+    }
+}
+@media screen and (min-width: 1900px){
+    header{
+        margin: 0 160px;
+    }
+    .solutions{
+        &__text{
+            padding: 361px 0 255px 0;
+        }
+    }
+    .idea{
+        margin: 60px 280px;
+    }
+    
+    .txt {
+        width: 861px;
+    }
+    .services{
+        margin: 0 160px;
+        &__border{
+            margin-bottom: -51.2em;
+            left: -8.6em;
+            width: 117%;
+        }
+        &__border-white{
+            margin-bottom: -52.4em;
+            left: -8.1em;
+            width: 115.5%;
+        }
+    }
+    .turn{
+        cursor: pointer;
+        
+        &__svg{
+            stroke:hover{
+                fill: colors.$accent;
+            }
+        } 
+    }
+    .merit{
+        width: 493px;
+    }
+    .creator{
+        margin: 60px 160px;
+        &__img-resize344 {
+            display: block;
+            border-radius: 12px 0px 0px 12px;
+            height: 298px;
+            object-fit: cover;
+        }
+    }
+    .info {
+        width: 1142px;
+    }
+    .funders{
+        margin: 0 100px;
+    }
+    .member{
+        border-radius: 12px;
+        &__item{
+            width: 430px;
+        }
+    }
+    .radius{
+        border-top-left-radius: 12px;
+    }
+    .radius1{
+        border-top-right-radius: 12px;
+    }
+    .radius2{
+        border-bottom-left-radius: 12px;
+    }
+    .radius3{
+        border-bottom-right-radius: 12px;
+    }
+    .publication{
+        margin: 0 160px;
+        margin-top: 90px;
+    }
+    .block{
+        width: 513px;
+        &__img {
+            width: 513px;
+            height: 200px;
+        }  
+    }
+    .block-resize{
+        width: 513px;
+        &__img{
+            width: 513px;
+            height: 200px;
+        }  
+    }
+    .stories {
+        width: 100%;
+    }
+    footer{
+        margin: 30px 160px;
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 1950px){
+    .hidden {
+        display: none;
+    }
+    #contactFormPopup.visible {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: colors.$bg;
+        border-radius: 5px;
+        z-index: 9999;
+        padding: 30px;
+        border-radius: 12px;
+        background: colors.$bg;
+        width: 600px;
+    }
+    
+    #help{
+        @include mixins.Montserrat(38px, 700, normal);
+        background: colors.$gradient-red-text;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        padding-bottom: 30px;
+    }
+    #answer{
+        @include mixins.Montserrat(14px, 700, normal);
+        color: colors.$text;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding-bottom: 15px;
+    }
+    label{
+        @include mixins.Montserrat(16px, 400, 26px);
+        color: colors.$text;
+        padding: 15px;
+    }
+    #contactFormPopup form{
+        @include mixins.flex(unset, flex-start, 0px, column);
+    }
+    #contactFormPopup textarea{
+        border-radius: 8px;
+        border: 1px solid colors.$white;
+        background: colors.$white;
+        height: 100px;
+    }
+    #contactFormPopup button{
+        background: colors.$regular;
+        box-shadow: 0px 0px 20px 0px colors.$txt-rgb;
+        width: 100%;
+        @include mixins.Montserrat(16px, 700, normal);
+        color: colors.$white;
+        padding: 18px 30px;
+        text-align: center;
+        border-radius: 12px;
+    }
+    .close-btn{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        &:hover{
+            fill: colors.$grey-bg;
+        }
+    }
+}
